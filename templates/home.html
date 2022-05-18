@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>選課查詢系統</title>
+
+</head>>
+<body>
+    <div class="header">
+        <h1 class="site-title text-center">
+            <a href="/">選課查詢系統</a>
+        </h1>
+    </div>>
+
+    <div class="container">
+        {% for course in course_list %}
+        <div class="course_wrapper">
+            <div class = "course">
+                <div class = "course_heading">
+                    <h2 class = "course_name">
+                        <a href="{% url 'detail' pk=course.pk %}">{{course.course_name}}</a>
+                    </h2>>
+                    <div class = "professor_name">{{course.professor_name}}</div>>
+                    <div class = "classroom">{{course.classroom}}</div>>
+                    
+                </div>>
+                <div class = "course_content">
+                    {{ course.detail }}
+                </div>
+                <div class="course-footer">
+                    <a class="read-more" href="{% url 'detail' pk=course.pk %}">
+                        Read More
+                    </a>
+                </div>
+            </div>>
+        </div>
+        {% endfor %}
+    </div>>
+</body>>
+</html>
