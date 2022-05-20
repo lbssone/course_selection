@@ -18,7 +18,7 @@ from homepage.views import search, home, detail
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$',home),
+    url(r'^$',home, name = 'home'),
     url(r'^course/(?P<pk>\d+)/$', detail, name='detail'),
-    url(r'^search/$', search),
+    url(r'^search/$', search, name = 'search'),
 ]
